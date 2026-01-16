@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalog Status API - Swagger UI</title>
+
+  <!-- Swagger UI CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="swagger-ui"></div>
+
+  <!-- Swagger UI JS -->
+  <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+  <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-standalone-preset.js"></script>
+  <script src="build.js"></script>
+
+
+  <script>
+     window.onload =  async () => {
+      SwaggerUIBundle({
+        spec: window.spec,   // use window.spec provided by build.js
+        dom_id: "#swagger-ui",
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        layout: "StandaloneLayout"
+      });
+    };
+  </script>
+</body>
+</html>
